@@ -76,7 +76,17 @@ multiply(4, 3, function(answer){
 
 
 
+var contains = function(names, aName, callback) {
+  for (var i = 0; i < names.length; i++) {
+  if (names[i] === aName) {
+  return callback(true);
+  }
+  else {
+    return callback(false);
+  }
+  }
 
+}
 
   //Code Here for contains
 
@@ -95,7 +105,15 @@ contains(names, 'Colt', function(result){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+function uniq(array, callback) {
+  var freshArray = [];
+for (var i = 0; i < array.length; i++) {
+    if (freshArray.indexOf(array[i])=== -1) {
+      freshArray.push(array[i]);
+    }
+    }
+    callback(freshArray);
+}
 
     //Code Here for uniq
 
@@ -110,7 +128,12 @@ uniq(names, function(uniqArr){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+function each(anArray, callback) {
+for (var i = 0; i < anArray.length; i++) {
 
+callback(anArray[i], i);
+  }
+}
 
     //Code Here for each
 
@@ -124,7 +147,13 @@ each(names, function(item, indice){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function getUserById(someun,theirId, callback) {
+  for (var i = 0; i < someun.length; i++) {
+    if (someun[i].id === theirId) {
+      return callback(someun[i]);
+    }
+  }
+}
 
 
 
